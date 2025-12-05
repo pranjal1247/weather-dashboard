@@ -1,0 +1,161 @@
+<!-- Sections of the website
+The website should contain the following sections.
+1. Navbar
+2. Search bar
+3. Weather Details
+4. About
+5. Footer
+NOTE : All the sections mentioned should be in a same page and should be responsive
+Details
+
+1. Navigation Bar
+There should be a top Navigation Bar that will redirect you to the different sections of the Page. Make sure that when a
+link is clicked it should scroll smoothly to the section.
+The navbar should be fixed and should be at the same position even after scrolling the page. Try adding hover effects
+too.
+The navigation bar must demonstrate responsiveness, featuring a hamburger menu for smaller screens.
+
+2. Search Bar
+Add a centered search bar below the navigation bar.
+Include a placeholder text such as "Enter a city name".
+Add a search button with a hover effect.
+Include error handling to display a message if the city is not found.
+Make the search functionality simple where the user has to enter the exact city name.
+
+3. Weather Details
+This section will display the current weather for the searched city. Include atleast:
+City name and date.
+Current temperature, weather description, and weather icon.
+Additional details such as humidity, wind speed, and atmospheric pressure.
+Use JavaScript to update this section dynamically.
+Style this section with CSS to make it visually appealing.
+For the weather data you can do one of the following :
+Easier Method: Make a JSON file with sample data of various cities and use it in your website.
+Advanced Method: Fetch details from an API. More information about fetching in the other tab(on your left). Give it a
+try once.
+Display an error message if the city is not found or the API call fails.
+
+4. About
+Write a brief description about the application and its purpose.
+Include an image or icon that represents weather or technology.
+
+5. Footer
+Add a footer with links to social media platforms (e.g., GitHub, LinkedIn).
+Include demo links like Terms and Conditions, Privacy Policy, and Copyright Information.
+Ensure links open in a new tab.
+Add a back-to-top button for smooth navigation back to the top of the page.
+
+6. Bonus Features:
+Change the background color according to the time of the day of the city searched for.
+Weather forecast for the whole week.
+Unit Toggle (Celsius/Fahrenheit) -->
+
+<!DOCTYPE html>
+
+<html>     
+  <head>
+    <link rel="icon" href="images/tab-logo.png">
+    <title>p!Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+  </head>
+    
+  <body id="top">
+    <nav>
+      <div class="logo-container">
+        <a href="index.html"><img src="images/logo.png" class="logo" title="p!Weather"></a>
+      </div>
+
+      <img src="images/hamburger-menu.svg" class="hamburger">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#weather-section">Weather</a></li>
+        <li><a href="#about-section">About</a></li>
+        <li><a href="#contact-section">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <section id="search-section">
+      <input type="text" placeholder="Enter city name" id="city-input">
+      <button id="search-btn">Search</button>
+    </section>
+
+    <section id="weather-section">
+      <div class="weather-container">
+        <div class="weather-card">
+          <div id="loader">
+            <div class="spinner"></div>
+            <p>Loading weather...</p>
+          </div>
+        
+          <div id="weather-content">
+            <div class="weather-header">
+              <h2 id="city-name">city</h2>
+              <p id="date">date</p>
+            </div>
+            <div class="weather-main">
+              <img id="weather-icon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
+              <h1 id="temperature">25&deg;C</h1>
+              <button id="unit-toggle">&deg;F</button>
+              <p id="description">Sunny</p>
+            </div>
+            <div class="weather-details">
+              <div class="detail">
+                <span>Humidity</span>
+                <span id="humidity">45%</span>
+              </div>
+              <div class="detail">
+                <span>Wind Speed</span>
+                <span id="wind-speed">12 km/h</span>
+              </div>
+              <div class="detail">
+                <span>Atm Pressure</span>
+                <span id="pressure"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="weather-forecast">
+          <h3 id="seven-day-title-text">Forecast</h3>
+          <div id="forecast-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-section">
+      <div class="about-container">
+        <img src="images/weather-technology.png">
+        <h2>About This App</h2>
+        <p>This Weather Dashboard allows you to check current weather status for any city around the globe.</p>
+        <p>Built using HTML, CSS, JavaScript.</p>
+      </div>
+    </section>
+
+    <footer id="contact-section">
+      <div class="footer-content">
+    
+        <div class="social-links">
+          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/pranjal-k-singh" target="_blank">LinkedIn</a>
+        </div>
+    
+        <p>&copy; 2025 p!Weather App. All rights reserved.</p>
+    
+        <div class="demo-links">
+          <a href="#" target="_blank">Privacy Policy</a>
+          <a href="#" target="_blank">Terms of Service</a>
+        </div>
+    
+      </div>
+    </footer>
+
+    <button id="back-to-top" title="Go to top">&uarr;</button>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
